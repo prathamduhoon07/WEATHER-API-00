@@ -6,46 +6,49 @@
 
 body {
     background-color: hsl(204, 86%, 23%);
-    font-family:Arial, Helvetica, sans-serif;
-    height: 500px;
+    font-family: Arial, Helvetica, sans-serif;
     background-image: url(https://img.freepik.com/free-vector/sky-background-video-conferencing_23-2148623068.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .weather-app {
     background-color: rgb(246, 247, 250);
     max-width: 420px;
+    width: 90%;
     margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .search-form {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 input[type="text"] {
     flex: 1;
-    padding: 20px;
+    padding: 15px;
     border: 2px solid #3498db;
     border-radius: 15px;
     font-size: 1rem;
-    height: 3rem;
+    margin-bottom: 10px;
 }
 
 .search-btn {
     background-color: #3498db;
     border: none;
-    height: 3rem;
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
     color: white;
-    margin-left: 10px;
-    transition: backgroung-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .search-btn:hover {
@@ -59,9 +62,9 @@ input[type="text"] {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    text-transform: capitalize;
 }
-.city-date-section h2{
+
+.city-date-section h2 {
     text-transform: capitalize;
 }
 
@@ -74,10 +77,6 @@ input[type="text"] {
     background-color: #c3eaf4;
     padding: 5px 10px;
     border-radius: 15px;
-}
-.temp{
-    margin-left: 5px;
-    font-size: 10px;
 }
 
 .temperature-info {
@@ -112,15 +111,17 @@ input[type="text"] {
 .additional-info {
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    gap:10px
+    gap: 10px;
 }
 
 .wind-info,
 .humidity-info,
 .visibility-info {
     background-color: #abe3f1;
-    width: 150px;
+    flex: 1 1 30%;
+    max-width: 150px;
     height: 130px;
     display: flex;
     align-items: center;
@@ -143,13 +144,34 @@ input[type="text"] {
     text-align: center;
 }
 
-#yox{
-    height: 400px;
-    width: 400px;
-    background-color: red;
-    color: azure;
-    margin-left: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 768px) {
+    .weather-app {
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-btn {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+
+    .temperature-info .temp {
+        font-size: 2.5rem;
+    }
+
+    .temperature-info .description span {
+        font-size: 1.2rem;
+    }
+
+    .wind-info,
+    .humidity-info,
+    .visibility-info {
+        flex: 1 1 100%;
+        max-width: none;
+        height: auto;
+        padding: 20px;
+    }
 }
