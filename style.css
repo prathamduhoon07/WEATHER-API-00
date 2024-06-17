@@ -42,12 +42,15 @@ input[type="text"] {
 }
 
 .search-btn {
-    background-color: #3498db;
+   background-color: #3498db;
     border: none;
     padding: 15px;
-    border-radius: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
     cursor: pointer;
     color: white;
+    margin-top: 0px;
+    height: 51px;
     transition: background-color 0.3s ease;
 }
 
